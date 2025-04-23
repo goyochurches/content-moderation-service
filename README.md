@@ -108,16 +108,6 @@ The workspace is organized as follows:
 │   │               └── 📂 utils
 ```
 
-## Wiki Links 📚
-
-Explore detailed documentation in the wiki:
-
-- [Description](https://github.com/goyochurches/user-flag-service/wiki//Description.md)
-- [Features](https://github.com/goyochurches/user-flag-service/wiki//Features.md)
-- [Dependencies](https://github.com/goyochurches/user-flag-service/wiki//Dependencies.md)
-- [Endpoints](https://github.com/goyochurches/user-flag-service/wiki//Endpoints.md)
-- [API Documentation](https://github.com/goyochurches/user-flag-service/wiki//API-Documentation.md)
-
 ## License 📜
 
 This project is licensed under the MIT License.
