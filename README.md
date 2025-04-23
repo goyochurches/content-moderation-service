@@ -2,6 +2,8 @@
 
 This project implements a **User Flag service** for a social network, designed to identify users who post offensive or abusive messages in the comments section. The system reads user messages from a CSV file, translates them to English if necessary, scores their offensiveness, and generates a per-user report.
 
+![flow](image.png)
+
 ---
 
 ## 📌 Features
@@ -33,7 +35,7 @@ This project implements a **User Flag service** for a social network, designed t
 
 ### Clone and Build
 
-````bash
+```bash
 git clone https://github.com/your-username/content-moderation-system.git
 cd content-moderation-system
 mvn clean install
@@ -41,7 +43,5 @@ mvn clean install
 
 🧪 Running Tests
 To run unit tests:
-
-```bash
 mvn test
-````
+```
