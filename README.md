@@ -97,8 +97,6 @@ The workspace is organized as follows:
 │   │               └── 📂 utils
 │   └── 📂 resources
 │       ├── 📄 application.properties
-│       ├── 📂 static
-│       └── 📂 templates
 ├── 📂 test
 │   ├── 📂 java
 │   │   └── 📂 com
@@ -108,8 +106,6 @@ The workspace is organized as follows:
 │   │               ├── 📂 controller
 │   │               ├── 📂 service
 │   │               └── 📂 utils
-│   └── 📂 resources
-│       └── 📄 test.csv
 ```
 
 ## License 📜
