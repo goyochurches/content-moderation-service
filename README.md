@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 # User Flag Service
 
 ## Description
+=======
+# 🛡️ User flag service
+
+This project implements a **User flag service** for a social network, designed to identify users who post offensive or abusive messages in the comments section. The system reads user messages from a CSV file, translates them to English if necessary, scores their offensiveness, and generates a per-user report.
+>>>>>>> c32d5df594b5f413bd84c07d8b764936ccc200d3
 
 The User Flag Service is a Spring Boot application designed to process user messages, calculate offensiveness scores, and generate reports in CSV format. It uses OpenFeign for external API communication and includes features like validation, caching, and exception handling.
 

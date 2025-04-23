@@ -34,14 +34,12 @@ public class UserFlagController {
         try {
             ByteArrayOutputStream outputStream = userFlagService.handleFileProcessingInMemory(file);
 
-            InputStreamResource resource = new InputStreamResource(
-                    new ByteArrayInputStream(outputStream.toByteArray()));
-
             return ResponseEntity.ok()
                     .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"output.csv\"")
                     .contentType(MediaType.APPLICATION_OCTET_STREAM)
                     .contentLength(outputStream.size())
-                    .body(resource);
+                    .body(new InputStreamResource(
+                            new ByteArrayInputStream(outputStream.toByteArray())));
         } catch (IOException e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("Error processing file: " + e.getMessage());
