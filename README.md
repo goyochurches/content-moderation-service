@@ -2,7 +2,7 @@
 
 ## Description
 
-e User Flag Service is a Spring Boot application designed to process user messages, calculate offensiveness scores, and generate reports in CSV format. It uses OpenFeign for external API communication and includes features like validation, caching, and exception handling.
+The User Flag Service is a Spring Boot application designed to process user messages, calculate offensiveness scores, and generate reports in CSV format. It includes features like validation, caching, and exception handling.
 
 ## Features
 
@@ -18,7 +18,6 @@ The project uses the following dependencies:
 
 - **Spring Boot Starter Actuator**: Provides production-ready features like monitoring and metrics.
 - **Spring Boot Starter Web**: Enables building RESTful web services.
-- **Spring Cloud Starter OpenFeign**: Simplifies HTTP client calls to external APIs.
 - **Spring Boot Starter Test**: Provides testing utilities for unit and integration tests.
 - **Apache Commons CSV**: Facilitates reading and writing CSV files.
 - **Lombok**: Reduces boilerplate code with annotations for getters, setters, etc.
@@ -70,6 +69,14 @@ Run all tests using:
 - **Request**: Multipart file upload (`file` parameter).
 - **Response**: CSV file with columns `user_id`, `total_messages`, and `avg_score`.
 
+## API Documentation
+
+The User Flag Service includes API documentation generated using Swagger. You can access the Swagger UI to explore and test the available endpoints.
+
+- **Swagger UI**: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+
+This provides an interactive interface to view the API documentation and test the endpoints directly.
+
 ## Project Structure
 
 The workspace is organized as follows:
@@ -82,24 +89,12 @@ The workspace is organized as follows:
 │   │       └── 📂 user
 │   │           └── 📂 flag
 │   │               ├── 📂 client
-│   │               │   ├── 📄 ScoringClient.java
-│   │               │   └── 📄 TranslationClient.java
 │   │               ├── 📂 config
-│   │               │   └── 📄 AppConfig.java
 │   │               ├── 📂 controller
-│   │               │   ├── 📄 GlobalExceptionHandler.java
-│   │               │   └── 📄 UserFlagController.java
 │   │               ├── 📂 dto
-│   │               │   └── 📄 UserStats.java
 │   │               ├── 📂 enums
-│   │               │   └── 📄 LanguageType.java
 │   │               ├── 📂 service
-│   │               │   ├── 📄 FileService.java
-│   │               │   └── 📄 UserFlagService.java
 │   │               └── 📂 utils
-│   │                   ├── 📄 FileNotEmptyValidator.java
-│   │                   ├── 📄 FileWriterUtil.java
-│   │                   └── 📄 UserStatsUtil.java
 │   └── 📂 resources
 │       ├── 📄 application.properties
 │       ├── 📂 static
