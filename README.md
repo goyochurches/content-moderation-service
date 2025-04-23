@@ -112,15 +112,15 @@ The workspace is organized as follows:
 
 Explore detailed documentation in the wiki:
 
-- [Description](wiki/Description.md)
-- [Features](wiki/Features.md)
-- [Dependencies](wiki/Dependencies.md)
-- [Setup Instructions](wiki/Setup-Instructions.md)
-- [Testing](wiki/Testing.md)
-- [Endpoints](wiki/Endpoints.md)
-- [API Documentation](wiki/API-Documentation.md)
-- [Project Structure](wiki/Project-Structure.md)
-- [License](wiki/License.md)
+- [Description](https://github.com/goyochurches/user-flag-service/wiki//Description.md)
+- [Features](https://github.com/goyochurches/user-flag-service/wiki//Features.md)
+- [Dependencies](https://github.com/goyochurches/user-flag-service/wiki//Dependencies.md)
+- [Setup Instructions](https://github.com/goyochurches/user-flag-service/wiki//Setup-Instructions.md)
+- [Testing](https://github.com/goyochurches/user-flag-service/wiki//Testing.md)
+- [Endpoints](https://github.com/goyochurches/user-flag-service/wiki//Endpoints.md)
+- [API Documentation](https://github.com/goyochurches/user-flag-service/wiki//API-Documentation.md)
+- [Project Structure](https://github.com/goyochurches/user-flag-service/wiki//Project-Structure.md)
+- [License](https://github.com/goyochurches/user-flag-service/wiki//License.md)
 
 ## License 📜
 
