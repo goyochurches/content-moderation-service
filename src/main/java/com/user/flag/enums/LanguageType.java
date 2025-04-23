@@ -1,12 +1,7 @@
-package com.user.flag.client;
+package com.user.flag.enums;
 
 public enum LanguageType {
-    ENGLISH("en"),
-    SPANISH("es"),
-    FRENCH("fr"),
-    GERMAN("de"),
-    CHINESE("zh"),
-    JAPANESE("ja");
+    ENGLISH("en");
 
     private final String code;
 

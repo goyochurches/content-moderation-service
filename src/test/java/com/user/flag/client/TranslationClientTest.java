@@ -11,6 +11,8 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.web.client.RestTemplate;
 
+import com.user.flag.enums.LanguageType;
+
 class TranslationClientTest {
 
     @Mock

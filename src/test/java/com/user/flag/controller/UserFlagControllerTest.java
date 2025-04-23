@@ -5,6 +5,8 @@ import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+import java.io.ByteArrayOutputStream;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockitoAnnotations;
@@ -17,7 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.user.flag.service.UserFlagService;
 
-@WebMvcTest(UserFlagController.class)
+@WebMvcTest(controllers = UserFlagController.class)
 class UserFlagControllerTest {
 
     @Autowired
@@ -33,16 +35,18 @@ class UserFlagControllerTest {
 
     @Test
     void testProcessFile() throws Exception {
+        ByteArrayOutputStream mockOutputStream = new ByteArrayOutputStream();
+        mockOutputStream.write("user_id,total_messages,avg_score\nuser1,5,0.75\n".getBytes());
 
-        when(userFlagService.handleFileProcessing(any(MultipartFile.class)))
-                .thenReturn("C:\\Users\\goyoc\\AppData\\Local\\Temp\\output.csv");
+        when(userFlagService.handleFileProcessingInMemory(any(MultipartFile.class)))
+                .thenReturn(mockOutputStream);
 
         mockMvc.perform(multipart("/api/user-flag/process")
                 .file("file", "test content".getBytes()))
                 .andExpect(status().isOk())
                 .andReturn();
 
-        verify(userFlagService, times(1)).handleFileProcessing(any(MultipartFile.class));
+        verify(userFlagService, times(1)).handleFileProcessingInMemory(any(MultipartFile.class));
     }
 
     @Test
@@ -54,7 +58,6 @@ class UserFlagControllerTest {
                 .andExpect(status().isBadRequest())
                 .andReturn();
 
-        verify(userFlagService, times(0)).handleFileProcessing(any(MultipartFile.class));
-
+        verify(userFlagService, times(0)).handleFileProcessingInMemory(any(MultipartFile.class));
     }
 }
