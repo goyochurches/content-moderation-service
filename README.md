@@ -1,77 +1,82 @@
-<p align="center">
-  <img src="./logo.png" alt="MP4 Conversion Hub logo" width="400"/>
-</p>
+🛡️ Content Moderation System
+This project implements a Content Moderation Application for a social network, aimed at identifying users who post offensive or abusive messages in the comments section. The application analyzes messages, translates them to English if needed, assigns an offensiveness score, and generates a per-user report.
 
-[![OSV-Scanner](https://github.com/QADRAX/mp4-conversion-hub/actions/workflows/osv-scanner.yaml/badge.svg?branch=main)](https://github.com/QADRAX/mp4-conversion-hub/actions/workflows/osv-scanner.yaml)
-[![CI Build](https://github.com/QADRAX/mp4-conversion-hub/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/QADRAX/mp4-conversion-hub/actions/workflows/ci.yml)
+📌 Features
+📄 Input: CSV file with columns user_id and message.
 
-# MP4 Conversion Hub
+🌐 Simulated external services:
 
-A lightweight, Dockerized media processing hub designed for home servers like [CasaOS](https://www.casaos.io/). It watches folders, scans files for viruses using ClamAV, and converts videos to MP4 format with FFmpeg. Includes a web UI for monitoring, uploading, and managing jobs.
+Translation Service: Translates messages to English.
 
-## Why MP4 Conversion Hub?
+Scoring Service: Assigns an offensiveness score between 0.0 and 1.0.
 
-MP4 Conversion Hub is an ideal tool for home media servers where families or groups of friends want to share and consume video content easily.
+⚙️ Output: CSV file with columns:
 
-Whether you're running Jellyfin, Plex, or a custom file server, one of the main challenges is ensuring that videos are in a format that can be streamed efficiently and universally. That’s where MP4 Conversion Hub fits in.
+user_id
 
-MP4 Conversion Hub is Dockerized and designed to work seamlessly with other containers by sharing volumes. On a home server setup (e.g., CasaOS, Portainer, or manual Docker Compose), it's easy to:
+total_messages
 
-- Mount a common input folder from your SFTP server (where users drop videos).
-- Let MP4 Conversion Hub scan and convert those files to MP4 in a shared output folder.
-- Point Jellyfin directly to that output folder to serve optimized content to all users.
+avg_score
 
-```
-# structure:
-📂 /src/main
-├── 📂 client
-├── 📂 controller
-├── 📂 dto
-├── 📂 service
-├── 📂 utils
+🧠 Optimized processing:
 
-```
+Caching for repeated messages.
 
-## 🚀 Features
+Concurrent processing for high performance on large datasets.
 
-- **User Flagging System** – Identifies users posting offensive or abusive messages.
-- **Translation Service Integration** – Automatically translates messages to English for scoring.
-- **Scoring Service Integration** – Assigns an offensiveness score to messages.
-- **Caching** – Uses Caffeine for caching translations and scores to improve performance.
-- **File Processing** – Handles large input files efficiently with streaming and caching.
-- **REST API** – Exposes endpoints for uploading and processing files.
-- **Modular Design** – Clean separation of concerns with dedicated layers for services, clients, and utilities.
+🔁 External services are idempotent, allowing redundant calls to be safely avoided.
 
-## 📦 Installation (Maven)
+🧪 Includes unit test coverage.
 
-### Prerequisites
+🚀 How to Run
+Clone the repository:
 
-- Java 21 or higher
-- Maven 3.8.1 or higher
+bash
+Copiar
+Editar
+git clone https://github.com/your-username/content-moderation-system.git
+cd content-moderation-system
+Build the project (using Maven):
 
-### Steps
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/your-repo/user-flag-service.git
-cd user-flag-service
-```
-
-2. Build the project:
-
-```bash
+bash
+Copiar
+Editar
 mvn clean install
-```
+Run the application:
 
-3. Run the application:
+bash
+Copiar
+Editar
+java -jar target/content-moderation-system.jar input.csv output.csv
+Where:
 
-```bash
-mvn spring-boot:run
-```
+input.csv is the input file with user messages.
 
-## 📚 More Info
+output.csv is the output report file.
 
-- **Caching**: Caffeine is used to cache translations and scores, reducing redundant calls to external services.
-- **File Handling**: The application processes large files efficiently using streaming and modular file services.
-- **REST API**: Simplified controllers delegate logic to service layers for better maintainability.
+📁 Project Structure
+Copiar
+Editar
+src/
+├── main/
+│ ├── java/
+│ │ └── com.example.moderation/
+│ │ ├── ModerationApp.java
+│ │ ├── service/
+│ │ ├── model/
+│ │ └── util/
+│ └── resources/
+├── test/
+│ └── java/
+│ └── com.example.moderation/
+🧪 Testing
+To run the unit tests:
+
+bash
+Copiar
+Editar
+mvn test
+✅ Requirements
+Java 11+
+
+Maven 3.6+
