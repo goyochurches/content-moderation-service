@@ -1,82 +1,47 @@
-🛡️ Content Moderation System
-This project implements a Content Moderation Application for a social network, aimed at identifying users who post offensive or abusive messages in the comments section. The application analyzes messages, translates them to English if needed, assigns an offensiveness score, and generates a per-user report.
+# 🛡️ User Flag service
 
-📌 Features
-📄 Input: CSV file with columns user_id and message.
+This project implements a **User Flag service** for a social network, designed to identify users who post offensive or abusive messages in the comments section. The system reads user messages from a CSV file, translates them to English if necessary, scores their offensiveness, and generates a per-user report.
 
-🌐 Simulated external services:
+---
 
-Translation Service: Translates messages to English.
+## 📌 Features
 
-Scoring Service: Assigns an offensiveness score between 0.0 and 1.0.
+- ✅ **CSV Input** with the following columns:
+  - `user_id`: Unique identifier of the user
+  - `message`: Message posted by the user
+- 🌐 **Simulated External Services**:
+  - **Translation Service**: Translates messages to English if needed
+  - **Scoring Service**: Returns a float score between `0.0` and `1.0` representing offensiveness
+- 💾 **CSV Output** with the following columns:
+  - `user_id`
+  - `total_messages`: Total number of messages from the user
+  - `avg_score`: Average offensiveness score of the user's messages
+- 🧠 **Performance-Oriented**:
+  - Caches repeated messages to avoid redundant service calls
+  - Uses parallel processing for large datasets
+- 🔁 **Idempotent Services**: Handles duplicate messages safely and efficiently
+- 🧪 **Unit Test Coverage Included**
 
-⚙️ Output: CSV file with columns:
+---
 
-user_id
+## 🚀 Getting Started
 
-total_messages
+### Prerequisites
 
-avg_score
+- Java 11 or higher
+- Maven 3.6 or higher
 
-🧠 Optimized processing:
+### Clone and Build
 
-Caching for repeated messages.
-
-Concurrent processing for high performance on large datasets.
-
-🔁 External services are idempotent, allowing redundant calls to be safely avoided.
-
-🧪 Includes unit test coverage.
-
-🚀 How to Run
-Clone the repository:
-
-bash
-Copiar
-Editar
+````bash
 git clone https://github.com/your-username/content-moderation-system.git
 cd content-moderation-system
-Build the project (using Maven):
-
-bash
-Copiar
-Editar
 mvn clean install
-Run the application:
 
-bash
-Copiar
-Editar
-java -jar target/content-moderation-system.jar input.csv output.csv
-Where:
 
-input.csv is the input file with user messages.
+🧪 Running Tests
+To run unit tests:
 
-output.csv is the output report file.
-
-📁 Project Structure
-Copiar
-Editar
-src/
-├── main/
-│ ├── java/
-│ │ └── com.example.moderation/
-│ │ ├── ModerationApp.java
-│ │ ├── service/
-│ │ ├── model/
-│ │ └── util/
-│ └── resources/
-├── test/
-│ └── java/
-│ └── com.example.moderation/
-🧪 Testing
-To run the unit tests:
-
-bash
-Copiar
-Editar
+```bash
 mvn test
-✅ Requirements
-Java 11+
-
-Maven 3.6+
+````
