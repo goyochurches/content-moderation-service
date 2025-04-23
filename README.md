@@ -1,18 +1,18 @@
-# User Flag Service
+# User Flag Service 🚩
 
-## Description
+## Description 📄
 
 The User Flag Service is a Spring Boot application designed to process user messages, calculate offensiveness scores, and generate reports in CSV format. It includes features like validation, caching, and exception handling.
 
-## Features
+## Features ✨
 
-- Process user messages from uploaded CSV files.
-- Calculate offensiveness scores using external APIs.
-- Generate reports with user statistics (e.g., total messages, average score).
-- Exception handling for invalid inputs and server errors.
-- In-memory caching for improved performance.
+- 📂 Process user messages from uploaded CSV files.
+- 📊 Calculate offensiveness scores using external APIs.
+- 📝 Generate reports with user statistics (e.g., total messages, average score).
+- 🚨 Exception handling for invalid inputs and server errors.
+- ⚡ In-memory caching for improved performance.
 
-## Dependencies
+## Dependencies 📦
 
 The project uses the following dependencies:
 
@@ -25,12 +25,12 @@ The project uses the following dependencies:
 - **Jakarta Validation API**: Enables validation annotations for request inputs.
 - **Hibernate Validator**: Implements Jakarta Bean Validation.
 
-## Requirements
+## Requirements 🛠️
 
 - **Java 21**
 - **Maven**
 
-## Setup Instructions
+## Setup Instructions 🚀
 
 1. Clone the repository:
 
@@ -53,7 +53,7 @@ The project uses the following dependencies:
 
 4. Access the application at `http://localhost:8080`.
 
-## Testing
+## Testing 🧪
 
 Run all tests using:
 
@@ -61,7 +61,7 @@ Run all tests using:
 ./mvnw test
 ```
 
-## Endpoints
+## Endpoints 🌐
 
 ### POST `/api/user-flag/process`
 
@@ -69,7 +69,7 @@ Run all tests using:
 - **Request**: Multipart file upload (`file` parameter).
 - **Response**: CSV file with columns `user_id`, `total_messages`, and `avg_score`.
 
-## API Documentation
+## API Documentation 📖
 
 The User Flag Service includes API documentation generated using Swagger. You can access the Swagger UI to explore and test the available endpoints.
 
@@ -77,7 +77,7 @@ The User Flag Service includes API documentation generated using Swagger. You ca
 
 This provides an interactive interface to view the API documentation and test the endpoints directly.
 
-## Project Structure
+## Project Structure 🗂️
 
 The workspace is organized as follows:
 
@@ -112,6 +112,6 @@ The workspace is organized as follows:
 │       └── 📄 test.csv
 ```
 
-## License
+## License 📜
 
 This project is licensed under the MIT License.
