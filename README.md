@@ -1,6 +1,6 @@
-# 🛡️ Content moderation service
+# 🛡️ User flag service
 
-This project implements a **Content moderation service** for a social network, designed to identify users who post offensive or abusive messages in the comments section. The system reads user messages from a CSV file, translates them to English if necessary, scores their offensiveness, and generates a per-user report.
+This project implements a **User flag service** for a social network, designed to identify users who post offensive or abusive messages in the comments section. The system reads user messages from a CSV file, translates them to English if necessary, scores their offensiveness, and generates a per-user report.
 
 ![flow](image.png)
 
