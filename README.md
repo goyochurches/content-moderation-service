@@ -120,7 +120,6 @@ Explore detailed documentation in the wiki:
 - [Endpoints](https://github.com/goyochurches/user-flag-service/wiki//Endpoints.md)
 - [API Documentation](https://github.com/goyochurches/user-flag-service/wiki//API-Documentation.md)
 - [Project Structure](https://github.com/goyochurches/user-flag-service/wiki//Project-Structure.md)
-- [License](https://github.com/goyochurches/user-flag-service/wiki//License.md)
 
 ## License 📜
 
